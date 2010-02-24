@@ -35,6 +35,7 @@ module Webrat
         @remote_control = ::Selenium::RemoteControl::RemoteControl.new("0.0.0.0",
                                                                        Webrat.configuration.selenium_server_port,
                                                                        :timeout => Webrat.configuration.selenium_browser_startup_timeout)
+        @remote_control.additional_args << Webrat.configuration.selenium_additional_args unless Webrat.configuration.selenium_additional_args.nil?
         @remote_control.jar_file = jar_path
 
         return @remote_control

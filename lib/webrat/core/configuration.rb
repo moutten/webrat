@@ -65,6 +65,9 @@ module Webrat
     # Set the timeout for waiting for the browser process to start
     attr_accessor :selenium_browser_startup_timeout
 
+    # Which additional arguments passed to the selenium server
+    attr_accessor :selenium_additional_args
+
     # How many redirects to the same URL should be halted as an infinite redirect
     # loop? Defaults to 10
     attr_accessor :infinite_redirect_limit
